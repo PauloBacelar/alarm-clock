@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" href="./next.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="./clock.png" type="image/gif" sizes="16x16">
 
 </head>
 
@@ -22,14 +22,52 @@
     <div id="content">
         <!-- Title and subtitle -->
         <h1>Alarm Clock</h1>
-        <h2>Press the button to show the next prime number</h2>
 
-        <!-- Input -->
-         <!-- *To bo done -->
+        <!-- Input -> type of alarm -->
+        <h2 id="type-of-alarm">Type of alarm</h2>
+        <div class="input">
+            <input type="radio" name="type-of-input" id="exact-time" class="input-radio" checked>
+            <label for="type-of-input">Set an exact time</label>
+        </div>
+        <div class="input">
+            <input type="radio" name="type-of-input" id="after-some-time" class="input-radio">
+            <label for="type-of-input">Set to play after some time</label>
+        </div>
+
+        <!-- Input -> time to play -->
+        <h2 id="play-at">Play at</h2>
+        <input type="number" name="hours" id="hours" class="time-input" maxlength="2"> :
+        <input type="number" name="minutes" id="minutes" class="time-input" maxlength="2">
+
+        <!-- Input -> sound -->
+        <div id="sounds-demostrations">
+            <h2>Sound</h2>
+
+            <div class="audio-demo">
+                <input type="radio" name="sound" id="classical-alarm" class="input-radio" checked>
+                <label for="sound">Classical alarm</label>
+            </div>
+            
+            <div class="audio-demo">
+                <input type="radio" name="sound" id="rooster-alarm" class="input-radio">
+                <label for="sound">Rooster</label>
+            </div>
+
+            <div class="audio-demo">
+                <input type="radio" name="sound" id="car-alarm" class="input-radio">
+                <label for="sound">Car</label>
+            </div>
+        </div>
+       
+        
+        <!-- Button -->
+        <button>Set alarm</button>
 
         <!-- Results -->
-        <p id="alarm-set">Set an alarm</p>
+        <p id="alarm-set"></p>
 
+        <!-- Scripts -->
+        <script src="alarms-sounds.js"></script>
         <script src="script.js"></script>
     </div>
 </body>

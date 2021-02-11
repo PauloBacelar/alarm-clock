@@ -27,16 +27,49 @@ h1 {
   font-weight: 600;
 
   /* Margin */
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 h2 {
-  /* Font */
-  font-size: 20px;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+#type-of-alarm,
+#play-at {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#play-at {
+  margin-top: 10px;
 }
 
 /* Input and button */
-#next-btn {
+.input-radio {
+  margin-right: 10px;
+}
+
+#sounds-demostrations .input-radio {
+  margin-right: 3px;
+}
+
+.audio-demo {
+  margin-top: 15px;
+}
+
+.input {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.time-input {
+  width: 30px;
+  outline: none;
+  border: none;
+}
+
+button {
   /* Margin and padding */
   padding: 7.5px;
   margin-top: 20px;
@@ -63,23 +96,9 @@ h2 {
   transition-duration: 0.5s;
 }
 
-#next-btn:hover {
+button:hover {
   /* Colors and text */
   background-color: rgb(0, 29, 82);
-  color: white;
-}
-
-/* Results */
-#result-div {
-  /* Size */
-  width: 180px;
-
-  /* Margin and padding */
-  padding: 7.5px;
-  margin: auto auto 20px auto;
-
-  /* Colors and text */
-  background-color: rgb(0, 18, 51);
   color: white;
 }
 
