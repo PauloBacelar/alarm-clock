@@ -1,0 +1,90 @@
+/* All entities */
+* {
+  /* Remove margin and padding */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Colors and text */
+  background-color: rgb(203, 216, 223);
+  font-family: "Grandstander", cursive;
+  text-align: center;
+  color: rgb(0, 18, 51);
+
+  /* Margin */
+  margin-top: 50px;
+}
+
+#content {
+  min-width: 300px;
+}
+
+/* Text */
+h1 {
+  /* Font */
+  font-size: 46px;
+  font-weight: 600;
+
+  /* Margin */
+  margin-bottom: 40px;
+}
+
+h2 {
+  /* Font */
+  font-size: 20px;
+}
+
+/* Input and button */
+#next-btn {
+  /* Margin and padding */
+  padding: 7.5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  /* Border */
+  border-radius: 10%;
+  outline: none;
+  border: none;
+
+  /* Colors and text */
+  background-color: white;
+  color: rgb(0, 29, 82);
+  font-family: "Grandstander", cursive;
+  font-weight: 600;
+  text-align: center;
+
+  /* Size */
+  width: 100px;
+  height: 40px;
+
+  /* Interaction */
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+#next-btn:hover {
+  /* Colors and text */
+  background-color: rgb(0, 29, 82);
+  color: white;
+}
+
+/* Results */
+#result-div {
+  /* Size */
+  width: 180px;
+
+  /* Margin and padding */
+  padding: 7.5px;
+  margin: auto auto 20px auto;
+
+  /* Colors and text */
+  background-color: rgb(0, 18, 51);
+  color: white;
+}
+
+/* Remove input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
