@@ -36,8 +36,12 @@
 
         <!-- Input -> time to play -->
         <h2 id="play-at">Play at</h2>
-        <input type="number" name="hours" id="hours" class="time-input" maxlength="2"> :
-        <input type="number" name="minutes" id="minutes" class="time-input" maxlength="2">
+        <input type="number" name="hours" id="hours" class="time-input"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            type="number" maxlength="2"> :
+        <input type="number" name="minutes" id="minutes" class="time-input"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            type="number" maxlength="2">
 
         <!-- Input -> sound -->
         <div id="sounds-demostrations">
@@ -47,7 +51,7 @@
                 <input type="radio" name="sound" id="classical-alarm" class="input-radio" checked>
                 <label for="sound">Classical alarm</label>
             </div>
-            
+
             <div class="audio-demo">
                 <input type="radio" name="sound" id="rooster-alarm" class="input-radio">
                 <label for="sound">Rooster</label>
@@ -58,8 +62,8 @@
                 <label for="sound">Car</label>
             </div>
         </div>
-       
-        
+
+
         <!-- Button -->
         <button>Set alarm</button>
 
@@ -67,7 +71,8 @@
         <p id="alarm-set"></p>
 
         <!-- Scripts -->
-        <script src="alarms-sounds.js"></script>
+        <script src="alarm-sounds-demo.js"></script>
+        <script src="change-text.js"></script>
         <script src="script.js"></script>
     </div>
 </body>
