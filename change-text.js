@@ -9,5 +9,5 @@ exactTime.addEventListener("click", function(){
 })
 
 afterSomeTime.addEventListener("click",function() {
-    textToChange.textContent = "Play after"
+    textToChange.textContent = "Play in"
 })
