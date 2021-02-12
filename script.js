@@ -57,6 +57,50 @@ function getCurrentTime() {
     return [date.getHours(), date.getMinutes()];
 }
 
+function showWhenWillPlay(time) {
+    result.textContent = `Alarm will play at ${time}`;
+}
+
+function calcWhenWillPlay(hours, minutes, isExactTime) {
+    if(isExactTime) {
+        return [hours, minutes];
+    } else {
+        let [currentHour, currentMinutes] = [...getCurrentTime()];
+        let actualHour = currentHour + hours;
+        let actualMinutes = currentMinutes + minutes;
+
+        if(actualHour >= 24) {
+            actualHour -= 24;
+        } 
+
+        if(actualMinutes >= 60) {
+            actualMinutes -= 60;
+            actualHour++;
+        }
+
+        console.log([actualHour, actualMinutes]);
+        return [actualHour, actualMinutes];
+    }
+}
+
+function formatTime(hours, minutes) {
+    hours = String(hours);
+    minutes = String(minutes);
+    let timeString = "";
+
+    if(Number(hours) < 10) {
+        timeString += "0";
+    }
+    timeString += hours + ":";
+
+    if(Number(minutes) < 10) {
+        timeString += "0";
+    }
+    timeString += minutes;
+
+    return timeString;
+}
+
 // Main function
 button.addEventListener("click", function() {
     let [hours, minutes] = [...getInputs()];
@@ -67,6 +111,10 @@ button.addEventListener("click", function() {
     }
 
     alarmIsSet = true;
+
     let millisecondsToPlay = toMilliseconds(hours, minutes, exactTime.checked);
-    console.log(millisecondsToPlay);
+    let [hoursItWillPlay, minutesItWillPlay] = calcWhenWillPlay(hours, minutes, exactTime.checked);
+
+    let timeItWillPlay = formatTime(hoursItWillPlay, minutesItWillPlay);
+    showWhenWillPlay(timeItWillPlay);
 })
