@@ -61,7 +61,7 @@ function getCurrentTime() {
 button.addEventListener("click", function() {
     let [hours, minutes] = [...getInputs()];
     
-    if(!checkInputs(hours, minutes)){ //|| alarmIsSet) {
+    if(!checkInputs(hours, minutes) || alarmIsSet) {
         showErrorMessage();
         return;
     }
