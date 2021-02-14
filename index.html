@@ -1,80 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
+  <head>
     <!-- Meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Title -->
     <title>Alarm Clock</title>
 
     <!-- Link font and CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" href="./clock.png" type="image/gif" sizes="16x16">
-</head>
+    <link rel="icon" href="./clock.png" type="image/gif" sizes="16x16" />
+  </head>
 
-<body>
+  <body>
     <div id="content">
-        <!-- Title and subtitle -->
-        <h1>Alarm Clock</h1>
+      <!-- Title and subtitle -->
+      <h1>Alarm Clock</h1>
 
-        <!-- Input -> type of alarm -->
-        <h2 id="type-of-alarm">Type of alarm</h2>
-        <div class="input">
-            <input type="radio" name="type-of-input" id="exact-time" class="input-radio" checked>
-            <label for="type-of-input">Set an exact time</label>
+      <!-- Input -> type of alarm -->
+      <h2 id="type-of-alarm">Type of alarm</h2>
+      <div class="input">
+        <input
+          type="radio"
+          name="type-of-input"
+          id="exact-time"
+          class="input-radio"
+          checked
+        />
+        <label for="type-of-input">Set an exact time</label>
+      </div>
+      <div class="input">
+        <input
+          type="radio"
+          name="type-of-input"
+          id="after-some-time"
+          class="input-radio"
+        />
+        <label for="type-of-input">Set to play after some time</label>
+      </div>
+
+      <!-- Input -> time to play -->
+      <h2 id="play-at">Play at</h2>
+      <input
+        type="number"
+        name="hours"
+        id="hours"
+        class="time-input"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        type="number"
+        maxlength="2"
+      />
+      :
+      <input
+        type="number"
+        name="minutes"
+        id="minutes"
+        class="time-input"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        type="number"
+        maxlength="2"
+      />
+
+      <!-- Input -> sound -->
+      <div id="sounds-demostrations">
+        <h2>Sound</h2>
+
+        <div class="audio-demo">
+          <input
+            type="radio"
+            name="sound"
+            id="classical-alarm"
+            class="input-radio"
+            checked
+          />
+          <label for="sound">Classical alarm</label>
         </div>
-        <div class="input">
-            <input type="radio" name="type-of-input" id="after-some-time" class="input-radio">
-            <label for="type-of-input">Set to play after some time</label>
+
+        <div class="audio-demo">
+          <input
+            type="radio"
+            name="sound"
+            id="rooster-alarm"
+            class="input-radio"
+          />
+          <label for="sound">Rooster</label>
         </div>
 
-        <!-- Input -> time to play -->
-        <h2 id="play-at">Play at</h2>
-        <input type="number" name="hours" id="hours" class="time-input"
-            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-            type="number" maxlength="2"> :
-        <input type="number" name="minutes" id="minutes" class="time-input"
-            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-            type="number" maxlength="2">
-
-        <!-- Input -> sound -->
-        <div id="sounds-demostrations">
-            <h2>Sound</h2>
-
-            <div class="audio-demo">
-                <input type="radio" name="sound" id="classical-alarm" class="input-radio" checked>
-                <label for="sound">Classical alarm</label>
-            </div>
-
-            <div class="audio-demo">
-                <input type="radio" name="sound" id="rooster-alarm" class="input-radio">
-                <label for="sound">Rooster</label>
-            </div>
-
-            <div class="audio-demo">
-                <input type="radio" name="sound" id="car-alarm" class="input-radio">
-                <label for="sound">Car</label>
-            </div>
+        <div class="audio-demo">
+          <input type="radio" name="sound" id="car-alarm" class="input-radio" />
+          <label for="sound">Car</label>
         </div>
+      </div>
 
+      <!-- Button -->
+      <button id="set-alarm">Set alarm</button>
+      <button id="cancel-alarm">Cancel alarm</button>
 
-        <!-- Button -->
-        <button id="set-alarm">Set alarm</button>
-        <button id="cancel-alarm">Cancel alarm</button>
+      <!-- Results -->
+      <p id="result"></p>
 
-        <!-- Results -->
-        <p id="result"></p>
-
-        <!-- Scripts -->
-        <script src="./javascript/alarm-sounds-demo.js"></script>
-        <script src="./javascript/change-text.js"></script>
-        <script src="./javascript/script.js"></script>
-        <script src="./javascript/cancel-alarm.js"></script>
+      <!-- Scripts -->
+      <script src="./javascript/alarm-sounds-demo.js"></script>
+      <script src="./javascript/change-text.js"></script>
+      <script src="./javascript/script.js"></script>
+      <script src="./javascript/cancel-alarm.js"></script>
     </div>
-</body>
+  </body>
 </html>
