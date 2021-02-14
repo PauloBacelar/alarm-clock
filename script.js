@@ -110,20 +110,37 @@ function whichSound() {
     }
 }
 
+function playSound(url) {
+    let audio = new Audio(url);
+    audio.play();
+}
+
 // Main function
 button.addEventListener("click", function() {
     let [hours, minutes] = [...getInputs()];
-    
+
+    // Check if inputs are valid or if there's already an alarm set
     if(!checkInputs(hours, minutes) || alarmIsSet) {
         showErrorMessage();
         return;
     }
 
+    // Alarm is set, user can't set another alarm
     alarmIsSet = true;
 
+    // Getting the time the alarm will play
     let millisecondsToPlay = toMilliseconds(hours, minutes, exactTime.checked);
     let [hoursItWillPlay, minutesItWillPlay] = calcWhenWillPlay(hours, minutes, exactTime.checked);
 
+    // Formatting the time and showing it to the user
     let timeItWillPlay = formatTime(hoursItWillPlay, minutesItWillPlay);
     showWhenWillPlay(timeItWillPlay);
+
+    // Play sound when time comes
+    let chosenSoundsURL = whichSound();
+    setTimeout(function() {
+        playSound(chosenSoundsURL);
+        alert("Alarm!");
+        alarmIsSet = false;
+    }, millisecondsToPlay);
 })
