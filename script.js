@@ -78,7 +78,6 @@ function calcWhenWillPlay(hours, minutes, isExactTime) {
             actualHour++;
         }
 
-        console.log([actualHour, actualMinutes]);
         return [actualHour, actualMinutes];
     }
 }
@@ -99,6 +98,16 @@ function formatTime(hours, minutes) {
     timeString += minutes;
 
     return timeString;
+}
+
+function whichSound() {
+    if(classicalAlarmInput.checked) {
+        return "./sounds/alarm_clock.mp3";
+    } else if(carAlarmInput.checked) {
+        return "./sounds/car_alarm.mp3";
+    } else if (rosterAlarmInput.checked) {
+        return "./sounds/roster.mp3";
+    }
 }
 
 // Main function
